@@ -2,7 +2,7 @@ global iptoagent: table[addr] of set[string] = table();
 
 event http_header(c:connection, is_orig:bool, name:string, value:string)
 {
-    local srcip:addr = c$id$orig_h;
+    local srcip: addr = c$id$orig_h;
     if(c$http?$user_agent)
     {
         local ua: string =to_lower(c$http$user_agent);
